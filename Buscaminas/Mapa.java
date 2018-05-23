@@ -15,9 +15,9 @@ public class Mapa extends GraphicsProgram {
 	GRect Tablero = new GRect(0, 0, Size_W*10, Size_H);
 	Contenido cont = new Contenido();
 	int [][] array = cont.Armar();
-	GRect cuadpunt = new GRect(Size_W*16/5, Size_H/6, 150, 25);
-	int bombs = 36;
-	GLabel bombas = new GLabel(bombs+"", (Size_W*16/5)+70, (Size_H/6)+20);
+	GRect cuadpunt = new GRect(Size_W*3, Size_H/6, Size_W*4, 25);
+	int bombs = cont.maxbombs;
+	GLabel bombas = new GLabel(bombs+"", (Size_W*3)+Size_W*7/4, (Size_H/6)+20);
 	int marked = 0;
 	public void BuildMap() {
 		for (int i = 1; i <= 18; i++) {
@@ -131,7 +131,7 @@ public class Mapa extends GraphicsProgram {
 					}
 				}
 			}
-			if (marked == 36) {
+			if (marked == cont.maxbombs) {
 				for (int i = 1; i <= 18; i++) {
 					for (int j = 0; j < 10; j++) {
 						GObject element = getElementAt(j*Size_W, i*Size_H);

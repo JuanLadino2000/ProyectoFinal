@@ -6,6 +6,7 @@ public class Contenido extends ConsoleProgram{
 	private static final long serialVersionUID = 1L;
 	
 	private static final RandomGenerator rg = new RandomGenerator();
+	public static int maxbombs = 36;
 	private boolean In(int[][] arr, int key1, int key2) {
 		if (arr[key1][key2] == 9) {
 			return true;
@@ -29,7 +30,7 @@ public class Contenido extends ConsoleProgram{
 		int[][] arreglo = new int[10][18];
 		int ran1;
 		int ran2;
-		for (int i = 0; i < 36; i++) {
+		for (int i = 0; i < maxbombs; i++) {
 			ran1 = rg.nextInt(0, 17);
 			ran2 = rg.nextInt(0, 9);
 			while (true) {
